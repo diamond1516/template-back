@@ -27,3 +27,8 @@ class AboutAdmin(admin.ModelAdmin):
 class WorkflowAdmin(admin.ModelAdmin):
     list_display = ('id', 'title', 'icon')
     list_display_links = ('id', 'title')
+
+
+@admin.register(models.Status)
+class salom(admin.ModelAdmin):
+    pass

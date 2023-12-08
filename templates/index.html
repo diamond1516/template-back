@@ -74,21 +74,13 @@ http://www.tooplate.com/view/2080-minimax
 			<div class="col-md-12 col-sm-12">
 				<h2>Our Workflow</h2>
 			</div>
+			{% for work in works %}
 			<div class="col-md-4 col-sm-4">
-				<i class="fa fa-cubes"></i>
-				<h3>Research</h3>
-				<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet. Dolore magna aliquam erat volutpat.</p>
+				<i class="{{ work.icon }}"></i>
+				<h3>{{ work.title }}</h3>
+				<p>{{ work.description }}</p>
 			</div>
-			<div class="col-md-4 col-sm-4">
-				<i class="fa fa-cogs"></i>
-				<h3>Design</h3>
-				<p>This website template is brought to you by Tooplate. You can modify and use it for any website. You can change icons by looking at <a rel="nofollow" href="http://fortawesome.github.io/Font-Awesome/examples/" target="_parent">examples</a>.</p>
-			</div>
-			<div class="col-md-4 col-sm-4">
-				<i class="fa fa-group"></i>
-				<h3>Implement</h3>
-				<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet. Dolore magna aliquam erat volutpat.</p>
-			</div>
+			{% endfor %}
 		</div>
 	</div>
 </div>
@@ -112,13 +104,12 @@ http://www.tooplate.com/view/2080-minimax
 				<h2>Minimax Story</h2>
 			</div>
 			<div class="col-md-6 col-sm-6">
-				<img src="{% static 'images/about-img.jpg' %}" class="img-responsive" alt="about img">
+				<img src="{{ about.image.url }}" class="img-responsive" alt="about img">
 			</div>
 			<div class="col-md-6 col-sm-6">
 				<h3>ABOUT US</h3>
-				<h4>Talented Designers &amp; Developers</h4>
-				<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet. Dolore magna aliquam erat volutpat. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet.</p>
-				<p>Dolore magna aliquam erat volutpat. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet. Dolore magna aliquam erat volutpat.</p>
+				<h4>{{ about.title }}</h4>
+				<p>{{ about.description }}</p>
 			</div>
 		</div>
 	</div>
@@ -142,26 +133,13 @@ http://www.tooplate.com/view/2080-minimax
 			<div class="col-md-12 col-sm-12">
 				<h2>People behind the firm</h2>
 			</div>
+			{% for i in teams %}
 			<div class="col-md-3 col-sm-6">
-				<img src="images/team1.jpg" class="img-responsive" alt="team img">
-				<h3>Jonny Thinker</h3>
-				<h4>Creative Director</h4>
+				<img src="{{ i.image.url }}" class="img-responsive" alt="team img">
+				<h3>{{ i.position }}</h3>
+				<h4>{{ i.full_name }}</h4>
 			</div>
-			<div class="col-md-3 col-sm-6">
-				<img src="images/team2.jpg" class="img-responsive" alt="team img">
-				<h3>Michael</h3>
-				<h4>CEO / Cc-founder</h4>
-			</div>
-			<div class="col-md-3 col-sm-6">
-				<img src="images/team3.jpg" class="img-responsive" alt="team img">
-				<h3>George Walker</h3>
-				<h4>Chief Designer</h4>
-			</div>
-			<div class="col-md-3 col-sm-6">
-				<img src="images/team4.jpg" class="img-responsive" alt="team img">
-				<h3>Mary Sandar</h3>
-				<h4>UX Specialist</h4>
-			</div>
+			{% endfor %}
 		</div>
 	</div>
 </div>
@@ -196,39 +174,11 @@ http://www.tooplate.com/view/2080-minimax
                		</ul>
                		<div class="iso-box-section">
                			<div class="iso-box-wrapper col4-iso-box">
-
-               				<div class="iso-box html photoshop wordpress mobile col-md-4 col-sm-6 col-xs-12">
-               				 	<a href="images/portfolio-img1.jpg" data-lightbox-gallery="portfolio-gallery"><img src="images/portfolio-img1.jpg" alt="portfolio img"></a>
+							{% for portfolio in portfolios %}
+               				 <div class="iso-box {{ portfolio.status }} col-md-4 col-sm-6 col-xs-12">
+               				 	<a href="{{ portfolio.obj.image.url }}" data-lightbox-gallery="portfolio-gallery"><img src="{{ portfolio.obj.image.url }}" alt="portfolio img"></a>
                				 </div>
-
-               				 <div class="iso-box html wordpress mobile col-md-4 col-sm-6 col-xs-12">
-               				 	<a href="images/portfolio-img2.jpg" data-lightbox-gallery="portfolio-gallery"><img src="images/portfolio-img2.jpg" alt="portfolio img"></a>
-               				 </div>
-
-               				 <div class="iso-box wordpress col-md-4 col-sm-6 col-xs-12">
-               				 	<a href="images/portfolio-img3.jpg" data-lightbox-gallery="portfolio-gallery"><img src="images/portfolio-img3.jpg" alt="portfolio img"></a>
-               				 </div>
-
-               				 <div class="iso-box html mobile col-md-6 col-sm-6 col-xs-12">
-               				 	<a href="images/portfolio-img4.jpg" data-lightbox-gallery="portfolio-gallery"><img src="images/portfolio-img4.jpg" alt="portfolio img"></a>
-               				 </div>
-
-               				 <div class="iso-box wordpress col-md-6 col-sm-6 col-xs-12">
-               				 	<a href="images/portfolio-img5.jpg" data-lightbox-gallery="portfolio-gallery"><img src="images/portfolio-img5.jpg" alt="portfolio img"></a>
-               				 </div>
-
-               				 <div class="iso-box html photoshop col-md-4 col-sm-6 col-xs-12">
-               				 	<a href="images/portfolio-img6.jpg" data-lightbox-gallery="portfolio-gallery"><img src="images/portfolio-img6.jpg" alt="portfolio img"></a>
-               				 </div>
-
-               				 <div class="iso-box photoshop col-md-4 col-sm-6 col-xs-12">
-               				 	<a href="images/portfolio-img7.jpg" data-lightbox-gallery="portfolio-gallery"><img src="images/portfolio-img7.jpg" alt="portfolio img"></a>
-               				 </div>
-
-               				 <div class="iso-box wordpress col-md-4 col-sm-6 col-xs-12">
-               				 	<a href="images/portfolio-img8.jpg" data-lightbox-gallery="portfolio-gallery"><img src="images/portfolio-img8.jpg" alt="portfolio img"></a>
-               				 </div>
-
+							{% endfor %}
                			</div>
                		</div>
 
