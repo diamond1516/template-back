@@ -16,7 +16,7 @@ def home(request):
         string = ''
         portfolios.append(data)
     contex = {
-        'works': models.Workflow.objects.all(),
+        'works': models.Workflow.objects.all()[:3],
         'about': models.About.objects.first(),
         'teams': models.Team.objects.all()[:4],
         'portfolios': portfolios
