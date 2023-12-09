@@ -22,3 +22,9 @@ def home(request):
         'portfolios': portfolios
     }
     return render(request, template_name='index.html', context=contex)
+
+
+def homepost(request):
+    if request.method == 'POST':
+        print(request.POST)
+    return render(request, template_name='index.html')
